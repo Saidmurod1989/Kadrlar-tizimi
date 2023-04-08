@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1 style="text-align: center;">Kadrlar tizimi</h1>
+<a href="/admin">Admin</a>
+
+<table id="customers">
+  <tr>
+    <th>Bo'limi</th>
+    <th>Ism sharif</th>
+    <th>Lavozim</th>
+    <th>stavka</th>
+  </tr>
+  {% for i in Hodim %}
+  <tr>
+    <td>{{ i.ism_sharifi }}</td>
+    <td>{{ i.bolimi }}</td>
+    <td>{{ i.lavozimi }}</td>
+    <td>{{ i.stavka }}</td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+</html>
